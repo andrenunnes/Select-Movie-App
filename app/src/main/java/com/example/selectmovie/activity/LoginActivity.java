@@ -10,12 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.selectmovie.R;
 import com.example.selectmovie.helper.ConfiguracaoFirebase;
 import com.example.selectmovie.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -31,8 +33,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //verificarUsuarioLogado();
+        verificarUsuarioLogado();
         inicializarComponentes();
+
 
         campoEmail = findViewById(R.id.editText_email_login);
         campoSenha = findViewById(R.id.editText_Password_login);
@@ -65,12 +68,13 @@ public class LoginActivity extends AppCompatActivity {
                         validarLogin(usuario);
 
                     }else {
-                        Toast.makeText(LoginActivity.this,"Preencha a senha!", Toast.LENGTH_SHORT).show();
+                        Snackbar.make(cadastrar, "Preencha a senha!", Snackbar.LENGTH_LONG).show();
                     }
 
                 }else {
-                    Toast.makeText(LoginActivity.this,"Preencha o email!", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(cadastrar, "Preencha o e-mail!", Snackbar.LENGTH_LONG).show();
                 }
+
 
             }
         });
@@ -78,13 +82,13 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    /*public void verificarUsuarioLogado(){
+    public void verificarUsuarioLogado(){
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
         if (autenticacao.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }
-    }*/
+    }
 
     public void validarLogin(Usuario usuario){
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
@@ -109,4 +113,6 @@ public class LoginActivity extends AppCompatActivity {
         campoSenha = findViewById(R.id.editText_Password_login);
         buttonEntrar = findViewById(R.id.button_login);
     }
+
+
 }

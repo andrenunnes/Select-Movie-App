@@ -1,25 +1,37 @@
 package com.example.selectmovie.model;
 
-public class Filme {
+import android.widget.RatingBar;
+
+import java.io.Serializable;
+
+public class Filme implements Serializable {
     private String titulo;
     private String classificacao;
     private String data;
     private String plataforma;
     private String genero;
     private String imagem;
+    private String idyt;
+    private String sinopse;
+    private String tituloSinopse;
+    private Float ratingBar;
 
 
     public Filme(){
 
     }
 
-    public Filme(String titulo, String classificacao, String data, String plataforma, String genero, String imagem) {
+    public Filme(String titulo, String classificacao, String data, String plataforma, String genero, String imagem, String idyt, String sinopse, String tituloSinopse, Float ratingBar) {
         this.titulo = titulo;
         this.classificacao = classificacao;
         this.data = data;
         this.plataforma = plataforma;
         this.genero = genero;
         this.imagem = imagem;
+        this.idyt = idyt;
+        this.sinopse = sinopse;
+        this.tituloSinopse = tituloSinopse;
+        this.ratingBar = ratingBar;
 
     }
 
@@ -71,4 +83,36 @@ public class Filme {
         this.imagem = imagem;
     }
 
+    public String getIdyt() {
+        return idyt;
+    }
+
+    public void setIdyt(String idyt) {
+        this.idyt = idyt;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
+
+    public String getTituloSinopse() {
+        return tituloSinopse;
+    }
+
+    public void setTituloSinopse(String tituloSinopse) {
+        this.tituloSinopse = tituloSinopse;
+    }
+
+
+    public Float getRatingBar() {
+        return ratingBar;
+    }
+
+    public void setRatingBar(Float ratingBar) {
+        this.ratingBar = ratingBar;
+    }
 }

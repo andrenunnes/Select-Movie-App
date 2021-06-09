@@ -16,6 +16,7 @@ import com.example.selectmovie.helper.ConfiguracaoFirebase;
 import com.example.selectmovie.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -27,9 +28,7 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText campoNome, campoEmail, campoSenha;
     private Button buttonCadastrar;
     private ProgressBar progressBar;
-
     private Usuario usuario;
-
     private FirebaseAuth autenticacao;
 
     @Override
@@ -59,15 +58,15 @@ public class CadastroActivity extends AppCompatActivity {
                             cadastrar(usuario);
 
                         }else {
-                            Toast.makeText(CadastroActivity.this,"Preencha a senha!", Toast.LENGTH_SHORT).show();
+                            Snackbar.make(buttonCadastrar, "Preencha a senha!", Snackbar.LENGTH_LONG).show();
                         }
 
                     }else {
-                        Toast.makeText(CadastroActivity.this,"Preencha o email!", Toast.LENGTH_SHORT).show();
+                        Snackbar.make(buttonCadastrar, "Preencha o e-mail!", Snackbar.LENGTH_LONG).show();
                     }
 
                 }else {
-                    Toast.makeText(CadastroActivity.this,"Preencha o nome!", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(buttonCadastrar, "Preencha o nome!", Snackbar.LENGTH_LONG).show();
                 }
 
             }
@@ -82,7 +81,7 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(CadastroActivity.this, "Cadastro com sucesso", Toast.LENGTH_LONG).show();
+                    Snackbar.make(buttonCadastrar, "Cadastro com sucesso!", Snackbar.LENGTH_LONG).show();
 
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     finish();

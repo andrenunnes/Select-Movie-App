@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
-    android:elevation="6dp">
+    android:elevation="6dp"
+    app:cardBackgroundColor="@color/cardview_dark_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,33 +37,39 @@
                 android:id="@+id/text_titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="Filme1"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_genero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gênero: Ação" />
+                android:text="Gênero: Ação"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/text_classificacao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Classificação: 16" />
+                android:text="Classificação: 16"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/text_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ano de lançamento: 2018" />
+                android:text="Ano de lançamento: 2018"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/text_plataforma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
-                android:text="Plataforma: Netflix" />
+                android:text="Plataforma: Netflix"
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>

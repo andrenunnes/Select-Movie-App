@@ -4,7 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,9 +20,10 @@ import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.MyViewHolder> {
+public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.MyViewHolder>{
 
     private List<Filme> filmes;
     private Context context;
@@ -58,15 +62,15 @@ public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.MyViewHolder
         return filmes.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
 
+
+    public class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView texttitulo;
         private TextView textdata;
         private ImageView imageFilme;
         private TextView textplataforma;
         private TextView textgenero;
         private TextView textclassifcacao;
-        private TextView duracao;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

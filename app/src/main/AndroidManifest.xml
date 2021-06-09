@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SelectMovie">
-        <activity android:name=".activity.CadastroActivity"></activity>
+        <activity android:name=".activity.FilmeActivity"></activity>
+        <activity android:name=".activity.CadastroActivity" />
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
